@@ -12,7 +12,7 @@ public class ImageMap {
         this.object = object;
     }
 
-    public int getID() {
-        return ID;
-    }
+    public int getID() {return ID;}
+
+    public ImageView getObject() {return object;}
 }

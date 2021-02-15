@@ -8,8 +8,6 @@ import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
 
-//    private ArrayList<ImageMap> sourceImages;
-
     private ImageView src1;
     private ImageView trg1;
     private ImageView src2;
@@ -21,20 +19,12 @@ public class MainActivity extends AppCompatActivity {
     private ImageView src5;
     private ImageView trg5;
 
-//    YOYOOYOYO
-
     int srcID = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-//        sourceImages = new ArrayList<>();
-//        ImageMap temp;
-//        src1 = findViewById(R.id.src1);
-//        temp = new ImageMap(1, src1);
-//        sourceImages.add(temp);
 
         src1 = findViewById(R.id.src1);
         trg1 = findViewById(R.id.trg1);
@@ -47,13 +37,34 @@ public class MainActivity extends AppCompatActivity {
         src5 = findViewById(R.id.src5);
         trg5 = findViewById(R.id.trg5);
 
-//        Collections.shuffle(sourceImages);
+//        ArrayList<Integer> japChars = new ArrayList<>();
+//        japChars.add(R.drawable.jap_a);
+//        japChars.add(R.drawable.jap_i);
+//        japChars.add(R.drawable.jap_u);
+//        japChars.add(R.drawable.jap_e);
+//        japChars.add(R.drawable.jap_o);
+
+        ArrayList<ImageMap> sourceImages = new ArrayList<>();
+        ImageMap char1 = new ImageMap(1, src1);
+        ImageMap char2 = new ImageMap(2, src2);
+        ImageMap char3 = new ImageMap(3, src3);
+        ImageMap char4 = new ImageMap(4, src4);
+        ImageMap char5 = new ImageMap(5, src5);
+        sourceImages.add(char1);
+        sourceImages.add(char2);
+        sourceImages.add(char3);
+        sourceImages.add(char4);
+        sourceImages.add(char5);
+
+        Collections.shuffle(sourceImages);
+        System.out.println(sourceImages.get(0));
     }
 
 //    public void onClickSRC1(View view) {
-//        ImageMap temp = sourceImages.get(0);
-//        srcID = temp.getID();
+//        ImageMap char1 = sourceImages.get(0);
+//        srcID = char1.getID();
 //    }
+
     public void onClickSRC1(View view) {srcID = 1;}
     public void onClickSRC2(View view) {srcID = 2;}
     public void onClickSRC3(View view) {srcID = 3;}
@@ -183,92 +194,4 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
-    public void onClickRadomise(View view) {
-
-        ArrayList<Integer> japChars = new ArrayList<>();
-        japChars.add(R.drawable.jap_a);
-        japChars.add(R.drawable.jap_i);
-        japChars.add(R.drawable.jap_u);
-        japChars.add(R.drawable.jap_e);
-        japChars.add(R.drawable.jap_o);
-
-        Collections.shuffle(japChars);
-
-        src1.setImageResource(japChars.get(0));
-        src2.setImageResource(japChars.get(1));
-        src3.setImageResource(japChars.get(2));
-        src4.setImageResource(japChars.get(3));
-        src5.setImageResource(japChars.get(4));
-        trg1.setImageResource(R.drawable.empty_box);
-        trg2.setImageResource(R.drawable.empty_box);
-        trg3.setImageResource(R.drawable.empty_box);
-        trg4.setImageResource(R.drawable.empty_box);
-        trg5.setImageResource(R.drawable.empty_box);
-    }
 }
-//        src1.setImageResource(japChars.get(rand.nextInt(japChars.size())));
-//        japChars.remove(rand.nextInt(japChars.size()));
-//        src2.setImageResource(japChars.get(rand.nextInt(japChars.size())));
-//        src3.setImageResource(japChars.get(rand.nextInt(japChars.size())));
-//        src4.setImageResource(japChars.get(rand.nextInt(japChars.size())));
-//        src5.setImageResource(japChars.get(rand.nextInt(japChars.size())));
-//        trg1.setImageResource(R.drawable.empty_box);
-//        trg2.setImageResource(R.drawable.empty_box);
-//        trg3.setImageResource(R.drawable.empty_box);
-//        trg4.setImageResource(R.drawable.empty_box);
-//        trg5.setImageResource(R.drawable.empty_box);
-
-//    Random rand = new Random();
-//    int i = 5;
-//        while (japChars.size() != 0) {
-//                int randInt = rand.nextInt(i);
-//                switch (randInt){
-//                case 0:
-//                src1.setImageResource(japChars.get(randInt));
-//                japChars.remove(randInt);
-//                break;
-//                case 1:
-//                src2.setImageResource(japChars.get(randInt));
-//                japChars.remove(randInt);
-//                break;
-//                case 2:
-//                src3.setImageResource(japChars.get(randInt));
-//                japChars.remove(randInt);
-//                break;
-//                case 3:
-//                src4.setImageResource(japChars.get(randInt));
-//                japChars.remove(randInt);
-//                break;
-//                case 4:
-//                src5.setImageResource(japChars.get(randInt));
-//                japChars.remove(randInt);
-//                break;
-//                }
-//                i = i - 1;
-//                }
-
-//        Random rand = new Random();
-//        int i = 5;
-//        while (japChars.size() != 0) {
-//            int randInt = rand.nextInt(i);
-//            if (randInt == 0) {
-//                src1.setImageResource(japChars.get(randInt));
-//                japChars.remove(randInt);
-//            } else if (randInt == 1) {
-//                src2.setImageResource(japChars.get(randInt));
-//                japChars.remove(randInt);
-//            } else if (randInt == 2) {
-//                src3.setImageResource(japChars.get(randInt));
-//                japChars.remove(randInt);
-//            } else if (randInt == 3) {
-//                src4.setImageResource(japChars.get(randInt));
-//                japChars.remove(randInt);
-//            } else if (randInt == 4) {
-//                src5.setImageResource(japChars.get(randInt));
-//                japChars.remove(randInt);
-//            }
-//            System.out.println(randInt);
-//            i = i - 1;
-//
-//        }
