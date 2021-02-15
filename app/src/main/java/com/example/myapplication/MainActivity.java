@@ -21,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageView src5;
     private ImageView trg5;
 
-    //andrei help me pls
-
     int srcID = 0;
 
     @Override
