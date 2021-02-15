@@ -57,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
         sourceImages.add(char5);
 
         Collections.shuffle(sourceImages);
-        System.out.println(sourceImages.get(0));
+        for (int i = 0; i <= 4; i++) {
+            System.out.println(sourceImages.get(i).getID());
+        }
     }
 
 //    public void onClickSRC1(View view) {
