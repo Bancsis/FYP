@@ -9,18 +9,17 @@ import java.util.*;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView src1;
-    private ImageView trg1;
     private ImageView src2;
-    private ImageView trg2;
     private ImageView src3;
-    private ImageView trg3;
     private ImageView src4;
-    private ImageView trg4;
     private ImageView src5;
+    private ImageView trg1;
+    private ImageView trg2;
+    private ImageView trg3;
+    private ImageView trg4;
     private ImageView trg5;
 
-    int srcID = 0;
-    ArrayList<Integer> japChars = new ArrayList<>();
+    int srcID;
     ArrayList<ImageMap> sourceImages = new ArrayList<>();
 
     @Override
@@ -39,27 +38,17 @@ public class MainActivity extends AppCompatActivity {
         trg4 = findViewById(R.id.trg4);
         trg5 = findViewById(R.id.trg5);
 
-        japChars.add(R.drawable.jap_a);
-        japChars.add(R.drawable.jap_i);
-        japChars.add(R.drawable.jap_u);
-        japChars.add(R.drawable.jap_e);
-        japChars.add(R.drawable.jap_o);
-
-        ImageMap char1 = new ImageMap(1, japChars.get(0));
-        ImageMap char2 = new ImageMap(2, japChars.get(1));
-        ImageMap char3 = new ImageMap(3, japChars.get(2));
-        ImageMap char4 = new ImageMap(4, japChars.get(3));
-        ImageMap char5 = new ImageMap(5, japChars.get(4));
+        ImageMap char1 = new ImageMap(1, R.drawable.jap_a);
+        ImageMap char2 = new ImageMap(2, R.drawable.jap_i);
+        ImageMap char3 = new ImageMap(3, R.drawable.jap_u);
+        ImageMap char4 = new ImageMap(4, R.drawable.jap_e);
+        ImageMap char5 = new ImageMap(5, R.drawable.jap_o);
         sourceImages.add(char1);
         sourceImages.add(char2);
         sourceImages.add(char3);
         sourceImages.add(char4);
         sourceImages.add(char5);
-
         Collections.shuffle(sourceImages);
-        for (int i = 0; i <= 4; i++) {
-            System.out.println(sourceImages.get(i).getID());
-        }
     }
 
     public void onClickSRC1(View view) {srcID = sourceImages.get(0).getID();}
