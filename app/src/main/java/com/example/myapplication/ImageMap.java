@@ -5,14 +5,14 @@ import android.widget.ImageView;
 public class ImageMap {
 
     int ID;
-    ImageView object;
+    Integer object;
 
-    public ImageMap(int ID, ImageView object) {
+    public ImageMap(int ID, Integer object) {
         this.ID = ID;
         this.object = object;
     }
 
     public int getID() {return ID;}
 
-    public ImageView getObject() {return object;}
+    public Integer getObject() {return object;}
 }
