@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView trg5;
 
     int srcID = 0;
+    ArrayList<Integer> japChars = new ArrayList<>();
+    ArrayList<ImageMap> sourceImages = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,24 +29,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         src1 = findViewById(R.id.src1);
-        trg1 = findViewById(R.id.trg1);
         src2 = findViewById(R.id.src2);
-        trg2 = findViewById(R.id.trg2);
         src3 = findViewById(R.id.src3);
-        trg3 = findViewById(R.id.trg3);
         src4 = findViewById(R.id.src4);
-        trg4 = findViewById(R.id.trg4);
         src5 = findViewById(R.id.src5);
+        trg1 = findViewById(R.id.trg1);
+        trg2 = findViewById(R.id.trg2);
+        trg3 = findViewById(R.id.trg3);
+        trg4 = findViewById(R.id.trg4);
         trg5 = findViewById(R.id.trg5);
 
-        ArrayList<Integer> japChars = new ArrayList<>();
         japChars.add(R.drawable.jap_a);
         japChars.add(R.drawable.jap_i);
         japChars.add(R.drawable.jap_u);
         japChars.add(R.drawable.jap_e);
         japChars.add(R.drawable.jap_o);
 
-        ArrayList<ImageMap> sourceImages = new ArrayList<>();
         ImageMap char1 = new ImageMap(1, japChars.get(0));
         ImageMap char2 = new ImageMap(2, japChars.get(1));
         ImageMap char3 = new ImageMap(3, japChars.get(2));
@@ -62,138 +62,133 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    public void onClickSRC1(View view) {
-//        ImageMap char1 = sourceImages.get(0);
-//        srcID = char1.getID();
-//    }
-
-    public void onClickSRC1(View view) {srcID = 1;}
-    public void onClickSRC2(View view) {srcID = 2;}
-    public void onClickSRC3(View view) {srcID = 3;}
-    public void onClickSRC4(View view) {srcID = 4;}
-    public void onClickSRC5(View view) {srcID = 5;}
+    public void onClickSRC1(View view) {srcID = sourceImages.get(0).getID();}
+    public void onClickSRC2(View view) {srcID = sourceImages.get(1).getID();}
+    public void onClickSRC3(View view) {srcID = sourceImages.get(2).getID();}
+    public void onClickSRC4(View view) {srcID = sourceImages.get(3).getID();}
+    public void onClickSRC5(View view) {srcID = sourceImages.get(4).getID();}
 
     public void onClickTRG1(View view) {
         switch (srcID) {
             case 1:
-                trg1.setImageResource(R.drawable.jap_a);
+                trg1.setImageResource(sourceImages.get(0).getObject());
                 src1.setImageResource(R.drawable.empty_box);
                 break;
             case 2:
-                trg1.setImageResource(R.drawable.jap_i);
+                trg1.setImageResource(sourceImages.get(1).getObject());
                 src2.setImageResource(R.drawable.empty_box);
                 break;
             case 3:
-                trg1.setImageResource(R.drawable.jap_u);
+                trg1.setImageResource(sourceImages.get(2).getObject());
                 src3.setImageResource(R.drawable.empty_box);
                 break;
             case 4:
-                trg1.setImageResource(R.drawable.jap_e);
+                trg1.setImageResource(sourceImages.get(3).getObject());
                 src4.setImageResource(R.drawable.empty_box);
                 break;
             case 5:
-                trg1.setImageResource(R.drawable.jap_o);
+                trg1.setImageResource(sourceImages.get(4).getObject());
                 src5.setImageResource(R.drawable.empty_box);
                 break;
         }
     }
-    public void onClickTRG2(View view) {
-
-        switch (srcID) {
-            case 1:
-                trg2.setImageResource(R.drawable.jap_a);
-                src1.setImageResource(R.drawable.empty_box);
-                break;
-            case 2:
-                trg2.setImageResource(R.drawable.jap_i);
-                src2.setImageResource(R.drawable.empty_box);
-                break;
-            case 3:
-                trg2.setImageResource(R.drawable.jap_u);
-                src3.setImageResource(R.drawable.empty_box);
-                break;
-            case 4:
-                trg2.setImageResource(R.drawable.jap_e);
-                src4.setImageResource(R.drawable.empty_box);
-                break;
-            case 5:
-                trg2.setImageResource(R.drawable.jap_o);
-                src5.setImageResource(R.drawable.empty_box);
-                break;
-        }
-    }
-    public void onClickTRG3(View view) {
-
-        switch (srcID) {
-            case 1:
-                trg3.setImageResource(R.drawable.jap_a);
-                src1.setImageResource(R.drawable.empty_box);
-                break;
-            case 2:
-                trg3.setImageResource(R.drawable.jap_i);
-                src2.setImageResource(R.drawable.empty_box);
-                break;
-            case 3:
-                trg3.setImageResource(R.drawable.jap_u);
-                src3.setImageResource(R.drawable.empty_box);
-                break;
-            case 4:
-                trg3.setImageResource(R.drawable.jap_e);
-                src4.setImageResource(R.drawable.empty_box);
-                break;
-            case 5:
-                trg3.setImageResource(R.drawable.jap_o);
-                src5.setImageResource(R.drawable.empty_box);
-                break;
-        }
-    }
-    public void onClickTRG4(View view) {
-
-        switch (srcID) {
-            case 1:
-                trg4.setImageResource(R.drawable.jap_a);
-                src1.setImageResource(R.drawable.empty_box);
-                break;
-            case 2:
-                trg4.setImageResource(R.drawable.jap_i);
-                src2.setImageResource(R.drawable.empty_box);
-                break;
-            case 3:
-                trg4.setImageResource(R.drawable.jap_u);
-                src3.setImageResource(R.drawable.empty_box);
-                break;
-            case 4:
-                trg4.setImageResource(R.drawable.jap_e);
-                src4.setImageResource(R.drawable.empty_box);
-                break;
-            case 5:
-                trg4.setImageResource(R.drawable.jap_o);
-                src5.setImageResource(R.drawable.empty_box);
-                break;
-        }
-    }
-    public void onClickTRG5(View view) {
-        switch (srcID) {
-            case 1:
-                trg5.setImageResource(R.drawable.jap_a);
-                src1.setImageResource(R.drawable.empty_box);
-                break;
-            case 2:
-                trg5.setImageResource(R.drawable.jap_i);
-                src2.setImageResource(R.drawable.empty_box);
-                break;
-            case 3:
-                trg5.setImageResource(R.drawable.jap_u);
-                src3.setImageResource(R.drawable.empty_box);
-                break;
-            case 4:
-                trg5.setImageResource(R.drawable.jap_e);
-                src4.setImageResource(R.drawable.empty_box);
-                break;
-            case 5:
-                trg5.setImageResource(R.drawable.jap_o);
-                src5.setImageResource(R.drawable.empty_box);
-                break;
-        }
-    }
+//    public void onClickTRG2(View view) {
+//
+//        switch (srcID) {
+//            case 1:
+//                trg2.setImageResource(R.drawable.jap_a);
+//                src1.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 2:
+//                trg2.setImageResource(R.drawable.jap_i);
+//                src2.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 3:
+//                trg2.setImageResource(R.drawable.jap_u);
+//                src3.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 4:
+//                trg2.setImageResource(R.drawable.jap_e);
+//                src4.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 5:
+//                trg2.setImageResource(R.drawable.jap_o);
+//                src5.setImageResource(R.drawable.empty_box);
+//                break;
+//        }
+//    }
+//    public void onClickTRG3(View view) {
+//
+//        switch (srcID) {
+//            case 1:
+//                trg3.setImageResource(R.drawable.jap_a);
+//                src1.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 2:
+//                trg3.setImageResource(R.drawable.jap_i);
+//                src2.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 3:
+//                trg3.setImageResource(R.drawable.jap_u);
+//                src3.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 4:
+//                trg3.setImageResource(R.drawable.jap_e);
+//                src4.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 5:
+//                trg3.setImageResource(R.drawable.jap_o);
+//                src5.setImageResource(R.drawable.empty_box);
+//                break;
+//        }
+//    }
+//    public void onClickTRG4(View view) {
+//
+//        switch (srcID) {
+//            case 1:
+//                trg4.setImageResource(R.drawable.jap_a);
+//                src1.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 2:
+//                trg4.setImageResource(R.drawable.jap_i);
+//                src2.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 3:
+//                trg4.setImageResource(R.drawable.jap_u);
+//                src3.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 4:
+//                trg4.setImageResource(R.drawable.jap_e);
+//                src4.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 5:
+//                trg4.setImageResource(R.drawable.jap_o);
+//                src5.setImageResource(R.drawable.empty_box);
+//                break;
+//        }
+//    }
+//    public void onClickTRG5(View view) {
+//        switch (srcID) {
+//            case 1:
+//                trg5.setImageResource(R.drawable.jap_a);
+//                src1.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 2:
+//                trg5.setImageResource(R.drawable.jap_i);
+//                src2.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 3:
+//                trg5.setImageResource(R.drawable.jap_u);
+//                src3.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 4:
+//                trg5.setImageResource(R.drawable.jap_e);
+//                src4.setImageResource(R.drawable.empty_box);
+//                break;
+//            case 5:
+//                trg5.setImageResource(R.drawable.jap_o);
+//                src5.setImageResource(R.drawable.empty_box);
+//                break;
+//        }
+//    }
 }
