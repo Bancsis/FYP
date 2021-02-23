@@ -98,12 +98,12 @@
 
     <ImageView
             android:layout_width="213dp"
-            android:layout_height="82dp" tools:srcCompat="@drawable/randomise" android:id="@+id/randomise"
+            android:layout_height="82dp" tools:srcCompat="@drawable/check_button" android:id="@+id/check_button"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_bias="0.929" app:layout_constraintStart_toStartOf="parent"
             android:visibility="visible" tools:visibility="visible"
-            android:background="#00000000" app:srcCompat="@drawable/randomise"
-            android:contentDescription="@string/randomise" android:onClick="onClickRandomise"/>
+            android:background="#00000000" app:srcCompat="@drawable/check_button"
+            android:contentDescription="@string/check_button" android:onClick="onClickCheck"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -213,7 +213,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClickRandomise(View view) {
+    public void onClickCheck(View view) {
         System.out.println(correctOrder);
+        if (correctOrder.get(0) != 1) { src1.setImageResource(R.drawable.jap_a_red); }
+        if (correctOrder.get(0) == 1) { src1.setImageResource(R.drawable.jap_a_green); }
+        if (correctOrder.get(1) != 2) { src2.setImageResource(R.drawable.jap_i_red); }
+        if (correctOrder.get(1) == 2) { src2.setImageResource(R.drawable.jap_i_green); }
+        if (correctOrder.get(2) != 3) { src3.setImageResource(R.drawable.jap_u_red); }
+        if (correctOrder.get(2) == 3) { src3.setImageResource(R.drawable.jap_u_green); }
+        if (correctOrder.get(3) != 4) { src4.setImageResource(R.drawable.jap_e_red); }
+        if (correctOrder.get(3) == 4) { src4.setImageResource(R.drawable.jap_e_green); }
+        if (correctOrder.get(4) != 5) { src5.setImageResource(R.drawable.jap_o_red); }
+        if (correctOrder.get(4) == 5) { src5.setImageResource(R.drawable.jap_o_green); }
     }
 }
