@@ -6,4 +6,5 @@
     <string name="jap_e">Japanese E</string>
     <string name="jap_o">Japanese O</string>
     <string name="empty_box">Empty Box</string>
+    <string name="randomise">Randomise Box</string>
 </resources>
