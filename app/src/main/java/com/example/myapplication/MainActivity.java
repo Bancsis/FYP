@@ -51,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
         sourceImages.add(char5);
         Collections.shuffle(sourceImages);
 
+        correctOrder.add(0);
+        correctOrder.add(0);
+        correctOrder.add(0);
+        correctOrder.add(0);
+        correctOrder.add(0);
+
         src1.setImageResource(sourceImages.get(0).getObject());
         src2.setImageResource(sourceImages.get(1).getObject());
         src3.setImageResource(sourceImages.get(2).getObject());
@@ -69,117 +75,114 @@ public class MainActivity extends AppCompatActivity {
             case 1:
                 trg1.setImageResource(sourceImages.get(0).getObject());
                 src1.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(0).getID());
+                correctOrder.set(0, sourceImages.get(0).getID());
                 break;
             case 2:
                 trg1.setImageResource(sourceImages.get(1).getObject());
                 src2.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(1).getID());
+                correctOrder.set(1, sourceImages.get(1).getID());
                 break;
             case 3:
                 trg1.setImageResource(sourceImages.get(2).getObject());
                 src3.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(2).getID());
+                correctOrder.set(2, sourceImages.get(2).getID());
                 break;
             case 4:
                 trg1.setImageResource(sourceImages.get(3).getObject());
                 src4.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(3).getID());
+                correctOrder.set(3, sourceImages.get(3).getID());
                 break;
             case 5:
                 trg1.setImageResource(sourceImages.get(4).getObject());
                 src5.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(4).getID());
+                correctOrder.set(4, sourceImages.get(4).getID());
                 break;
         }
     }
     public void onClickTRG2(View view) {
-
         switch (srcID) {
             case 1:
                 trg2.setImageResource(sourceImages.get(0).getObject());
                 src1.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(0).getID());
+                correctOrder.set(0, sourceImages.get(0).getID());
                 break;
             case 2:
                 trg2.setImageResource(sourceImages.get(1).getObject());
                 src2.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(1).getID());
+                correctOrder.set(1, sourceImages.get(1).getID());
                 break;
             case 3:
                 trg2.setImageResource(sourceImages.get(2).getObject());
                 src3.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(2).getID());
+                correctOrder.set(2, sourceImages.get(2).getID());
                 break;
             case 4:
                 trg2.setImageResource(sourceImages.get(3).getObject());
                 src4.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(3).getID());
+                correctOrder.set(3, sourceImages.get(3).getID());
                 break;
             case 5:
                 trg2.setImageResource(sourceImages.get(4).getObject());
                 src5.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(4).getID());
+                correctOrder.set(4, sourceImages.get(4).getID());
                 break;
         }
     }
     public void onClickTRG3(View view) {
-
         switch (srcID) {
             case 1:
                 trg3.setImageResource(sourceImages.get(0).getObject());
                 src1.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(0).getID());
+                correctOrder.set(0, sourceImages.get(0).getID());
                 break;
             case 2:
                 trg3.setImageResource(sourceImages.get(1).getObject());
                 src2.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(1).getID());
+                correctOrder.set(1, sourceImages.get(1).getID());
                 break;
             case 3:
                 trg3.setImageResource(sourceImages.get(2).getObject());
                 src3.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(2).getID());
+                correctOrder.set(2, sourceImages.get(2).getID());
                 break;
             case 4:
                 trg3.setImageResource(sourceImages.get(3).getObject());
                 src4.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(3).getID());
+                correctOrder.set(3, sourceImages.get(3).getID());
                 break;
             case 5:
                 trg3.setImageResource(sourceImages.get(4).getObject());
                 src5.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(4).getID());
+                correctOrder.set(4, sourceImages.get(4).getID());
                 break;
         }
     }
     public void onClickTRG4(View view) {
-
         switch (srcID) {
             case 1:
                 trg4.setImageResource(sourceImages.get(0).getObject());
                 src1.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(0).getID());
+                correctOrder.set(0, sourceImages.get(0).getID());
                 break;
             case 2:
                 trg4.setImageResource(sourceImages.get(1).getObject());
                 src2.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(1).getID());
+                correctOrder.set(1, sourceImages.get(1).getID());
                 break;
             case 3:
                 trg4.setImageResource(sourceImages.get(2).getObject());
                 src3.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(2).getID());
+                correctOrder.set(2, sourceImages.get(2).getID());
                 break;
             case 4:
                 trg4.setImageResource(sourceImages.get(3).getObject());
                 src4.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(3).getID());
+                correctOrder.set(3, sourceImages.get(3).getID());
                 break;
             case 5:
                 trg4.setImageResource(sourceImages.get(4).getObject());
                 src5.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(4).getID());
+                correctOrder.set(4, sourceImages.get(4).getID());
                 break;
         }
     }
@@ -188,27 +191,27 @@ public class MainActivity extends AppCompatActivity {
             case 1:
                 trg5.setImageResource(sourceImages.get(0).getObject());
                 src1.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(0).getID());
+                correctOrder.set(0, sourceImages.get(0).getID());
                 break;
             case 2:
                 trg5.setImageResource(sourceImages.get(1).getObject());
                 src2.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(1).getID());
+                correctOrder.set(1, sourceImages.get(1).getID());
                 break;
             case 3:
                 trg5.setImageResource(sourceImages.get(2).getObject());
                 src3.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(2).getID());
+                correctOrder.set(2, sourceImages.get(2).getID());
                 break;
             case 4:
                 trg5.setImageResource(sourceImages.get(3).getObject());
                 src4.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(3).getID());
+                correctOrder.set(3, sourceImages.get(3).getID());
                 break;
             case 5:
                 trg5.setImageResource(sourceImages.get(4).getObject());
                 src5.setImageResource(R.drawable.empty_box);
-                correctOrder.add(sourceImages.get(4).getID());
+                correctOrder.set(4, sourceImages.get(4).getID());
                 break;
         }
     }
