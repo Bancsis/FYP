@@ -8,250 +8,276 @@ import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView src1;
-    private ImageView src2;
-    private ImageView src3;
-    private ImageView src4;
-    private ImageView src5;
-    private ImageView trg1;
-    private ImageView trg2;
-    private ImageView trg3;
-    private ImageView trg4;
-    private ImageView trg5;
 
-    int srcID;
-    ArrayList<ImageMap> sourceImages = new ArrayList<>();
-    ArrayList<Integer> correctOrder = new ArrayList<>();
+    public ImageViewController ctrl;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ctrl = new ImageViewController();
+
         setContentView(R.layout.activity_main);
 
-        src1 = findViewById(R.id.src1);
-        src2 = findViewById(R.id.src2);
-        src3 = findViewById(R.id.src3);
-        src4 = findViewById(R.id.src4);
-        src5 = findViewById(R.id.src5);
-        trg1 = findViewById(R.id.trg1);
-        trg2 = findViewById(R.id.trg2);
-        trg3 = findViewById(R.id.trg3);
-        trg4 = findViewById(R.id.trg4);
-        trg5 = findViewById(R.id.trg5);
+        imageViewLinkToResource();
 
-        ImageMap char1 = new ImageMap(1, R.drawable.jap_a);
-        ImageMap char2 = new ImageMap(2, R.drawable.jap_i);
-        ImageMap char3 = new ImageMap(3, R.drawable.jap_u);
-        ImageMap char4 = new ImageMap(4, R.drawable.jap_e);
-        ImageMap char5 = new ImageMap(5, R.drawable.jap_o);
-        sourceImages.add(char1);
-        sourceImages.add(char2);
-        sourceImages.add(char3);
-        sourceImages.add(char4);
-        sourceImages.add(char5);
-        Collections.shuffle(sourceImages);
+        japCharConnection();
 
-        correctOrder.add(0);
-        correctOrder.add(0);
-        correctOrder.add(0);
-        correctOrder.add(0);
-        correctOrder.add(0);
+        addCharToArray();
 
-        src1.setImageResource(sourceImages.get(0).getObject());
-        src2.setImageResource(sourceImages.get(1).getObject());
-        src3.setImageResource(sourceImages.get(2).getObject());
-        src4.setImageResource(sourceImages.get(3).getObject());
-        src5.setImageResource(sourceImages.get(4).getObject());
+        initArray();
+
+        displayShuffledItems();
     }
 
-    public void onClickSRC1(View view) {srcID = 1;}
-    public void onClickSRC2(View view) {srcID = 2;}
-    public void onClickSRC3(View view) {srcID = 3;}
-    public void onClickSRC4(View view) {srcID = 4;}
-    public void onClickSRC5(View view) {srcID = 5;}
+    public void onClickSRC1(View view) {ctrl.srcID = 1;}
+    public void onClickSRC2(View view) {ctrl.srcID = 2;}
+    public void onClickSRC3(View view) {ctrl.srcID = 3;}
+    public void onClickSRC4(View view) {ctrl.srcID = 4;}
+    public void onClickSRC5(View view) {ctrl.srcID = 5;}
 
     public void onClickTRG1(View view) {
-        switch (srcID) {
+        switch (ctrl.srcID) {
             case 1:
-                trg1.setImageResource(sourceImages.get(0).getObject());
-                src1.setImageResource(R.drawable.empty_box);
-                correctOrder.set(0, sourceImages.get(0).getID());
-                System.out.println(correctOrder);
+                ctrl.trg1.setImageResource(ctrl.sourceImages.get(0).getObject());
+                ctrl.src1.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(0, ctrl.sourceImages.get(0).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 2:
-                trg1.setImageResource(sourceImages.get(1).getObject());
-                src2.setImageResource(R.drawable.empty_box);
-                correctOrder.set(0, sourceImages.get(1).getID());
-                System.out.println(correctOrder);
+                ctrl.trg1.setImageResource(ctrl.sourceImages.get(1).getObject());
+                ctrl.src2.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(0, ctrl.sourceImages.get(1).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 3:
-                trg1.setImageResource(sourceImages.get(2).getObject());
-                src3.setImageResource(R.drawable.empty_box);
-                correctOrder.set(0, sourceImages.get(2).getID());
-                System.out.println(correctOrder);
+                ctrl.trg1.setImageResource(ctrl.sourceImages.get(2).getObject());
+                ctrl.src3.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(0, ctrl.sourceImages.get(2).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 4:
-                trg1.setImageResource(sourceImages.get(3).getObject());
-                src4.setImageResource(R.drawable.empty_box);
-                correctOrder.set(0, sourceImages.get(3).getID());
-                System.out.println(correctOrder);
+                ctrl.trg1.setImageResource(ctrl.sourceImages.get(3).getObject());
+                ctrl.src4.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(0, ctrl.sourceImages.get(3).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 5:
-                trg1.setImageResource(sourceImages.get(4).getObject());
-                src5.setImageResource(R.drawable.empty_box);
-                correctOrder.set(0, sourceImages.get(4).getID());
-                System.out.println(correctOrder);
+                ctrl.trg1.setImageResource(ctrl.sourceImages.get(4).getObject());
+                ctrl.src5.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(0, ctrl.sourceImages.get(4).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
         }
     }
     public void onClickTRG2(View view) {
-        switch (srcID) {
+        switch (ctrl.srcID) {
             case 1:
-                trg2.setImageResource(sourceImages.get(0).getObject());
-                src1.setImageResource(R.drawable.empty_box);
-                correctOrder.set(1, sourceImages.get(0).getID());
-                System.out.println(correctOrder);
+                ctrl.trg2.setImageResource(ctrl.sourceImages.get(0).getObject());
+                ctrl.src1.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(1, ctrl.sourceImages.get(0).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 2:
-                trg2.setImageResource(sourceImages.get(1).getObject());
-                src2.setImageResource(R.drawable.empty_box);
-                correctOrder.set(1, sourceImages.get(1).getID());
-                System.out.println(correctOrder);
+                ctrl.trg2.setImageResource(ctrl.sourceImages.get(1).getObject());
+                ctrl.src2.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(1, ctrl.sourceImages.get(1).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 3:
-                trg2.setImageResource(sourceImages.get(2).getObject());
-                src3.setImageResource(R.drawable.empty_box);
-                correctOrder.set(1, sourceImages.get(2).getID());
-                System.out.println(correctOrder);
+                ctrl.trg2.setImageResource(ctrl.sourceImages.get(2).getObject());
+                ctrl.src3.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(1, ctrl.sourceImages.get(2).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 4:
-                trg2.setImageResource(sourceImages.get(3).getObject());
-                src4.setImageResource(R.drawable.empty_box);
-                correctOrder.set(1, sourceImages.get(3).getID());
-                System.out.println(correctOrder);
+                ctrl.trg2.setImageResource(ctrl.sourceImages.get(3).getObject());
+                ctrl.src4.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(1, ctrl.sourceImages.get(3).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 5:
-                trg2.setImageResource(sourceImages.get(4).getObject());
-                src5.setImageResource(R.drawable.empty_box);
-                correctOrder.set(1, sourceImages.get(4).getID());
-                System.out.println(correctOrder);
+                ctrl.trg2.setImageResource(ctrl.sourceImages.get(4).getObject());
+                ctrl.src5.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(1, ctrl.sourceImages.get(4).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
         }
     }
     public void onClickTRG3(View view) {
-        switch (srcID) {
+        switch (ctrl.srcID) {
             case 1:
-                trg3.setImageResource(sourceImages.get(0).getObject());
-                src1.setImageResource(R.drawable.empty_box);
-                correctOrder.set(2, sourceImages.get(0).getID());
-                System.out.println(correctOrder);
+                ctrl.trg3.setImageResource(ctrl.sourceImages.get(0).getObject());
+                ctrl.src1.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(2, ctrl.sourceImages.get(0).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 2:
-                trg3.setImageResource(sourceImages.get(1).getObject());
-                src2.setImageResource(R.drawable.empty_box);
-                correctOrder.set(2, sourceImages.get(1).getID());
-                System.out.println(correctOrder);
+                ctrl.trg3.setImageResource(ctrl.sourceImages.get(1).getObject());
+                ctrl.src2.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(2, ctrl.sourceImages.get(1).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 3:
-                trg3.setImageResource(sourceImages.get(2).getObject());
-                src3.setImageResource(R.drawable.empty_box);
-                correctOrder.set(2, sourceImages.get(2).getID());
-                System.out.println(correctOrder);
+                ctrl.trg3.setImageResource(ctrl.sourceImages.get(2).getObject());
+                ctrl.src3.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(2, ctrl.sourceImages.get(2).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 4:
-                trg3.setImageResource(sourceImages.get(3).getObject());
-                src4.setImageResource(R.drawable.empty_box);
-                correctOrder.set(2, sourceImages.get(3).getID());
-                System.out.println(correctOrder);
+                ctrl.trg3.setImageResource(ctrl.sourceImages.get(3).getObject());
+                ctrl.src4.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(2, ctrl.sourceImages.get(3).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 5:
-                trg3.setImageResource(sourceImages.get(4).getObject());
-                src5.setImageResource(R.drawable.empty_box);
-                correctOrder.set(2, sourceImages.get(4).getID());
-                System.out.println(correctOrder);
+                ctrl.trg3.setImageResource(ctrl.sourceImages.get(4).getObject());
+                ctrl.src5.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(2, ctrl.sourceImages.get(4).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
         }
     }
     public void onClickTRG4(View view) {
-        switch (srcID) {
+        switch (ctrl.srcID) {
             case 1:
-                trg4.setImageResource(sourceImages.get(0).getObject());
-                src1.setImageResource(R.drawable.empty_box);
-                correctOrder.set(3, sourceImages.get(0).getID());
-                System.out.println(correctOrder);
+                ctrl.trg4.setImageResource(ctrl.sourceImages.get(0).getObject());
+                ctrl.src1.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(3, ctrl.sourceImages.get(0).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 2:
-                trg4.setImageResource(sourceImages.get(1).getObject());
-                src2.setImageResource(R.drawable.empty_box);
-                correctOrder.set(3, sourceImages.get(1).getID());
-                System.out.println(correctOrder);
+                ctrl.trg4.setImageResource(ctrl.sourceImages.get(1).getObject());
+                ctrl.src2.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(3, ctrl.sourceImages.get(1).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 3:
-                trg4.setImageResource(sourceImages.get(2).getObject());
-                src3.setImageResource(R.drawable.empty_box);
-                correctOrder.set(3, sourceImages.get(2).getID());
-                System.out.println(correctOrder);
+                ctrl.trg4.setImageResource(ctrl.sourceImages.get(2).getObject());
+                ctrl.src3.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(3, ctrl.sourceImages.get(2).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 4:
-                trg4.setImageResource(sourceImages.get(3).getObject());
-                src4.setImageResource(R.drawable.empty_box);
-                correctOrder.set(3, sourceImages.get(3).getID());
-                System.out.println(correctOrder);
+                ctrl.trg4.setImageResource(ctrl.sourceImages.get(3).getObject());
+                ctrl.src4.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(3, ctrl.sourceImages.get(3).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 5:
-                trg4.setImageResource(sourceImages.get(4).getObject());
-                src5.setImageResource(R.drawable.empty_box);
-                correctOrder.set(3, sourceImages.get(4).getID());
-                System.out.println(correctOrder);
+                ctrl.trg4.setImageResource(ctrl.sourceImages.get(4).getObject());
+                ctrl.src5.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(3, ctrl.sourceImages.get(4).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
         }
     }
     public void onClickTRG5(View view) {
-        switch (srcID) {
+        switch (ctrl.srcID) {
             case 1:
-                trg5.setImageResource(sourceImages.get(0).getObject());
-                src1.setImageResource(R.drawable.empty_box);
-                correctOrder.set(4, sourceImages.get(0).getID());
-                System.out.println(correctOrder);
+                ctrl.trg5.setImageResource(ctrl.sourceImages.get(0).getObject());
+                ctrl.src1.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(4, ctrl.sourceImages.get(0).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 2:
-                trg5.setImageResource(sourceImages.get(1).getObject());
-                src2.setImageResource(R.drawable.empty_box);
-                correctOrder.set(4, sourceImages.get(1).getID());
-                System.out.println(correctOrder);
+                ctrl.trg5.setImageResource(ctrl.sourceImages.get(1).getObject());
+                ctrl.src2.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(4, ctrl.sourceImages.get(1).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 3:
-                trg5.setImageResource(sourceImages.get(2).getObject());
-                src3.setImageResource(R.drawable.empty_box);
-                correctOrder.set(4, sourceImages.get(2).getID());
-                System.out.println(correctOrder);
+                ctrl.trg5.setImageResource(ctrl.sourceImages.get(2).getObject());
+                ctrl.src3.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(4, ctrl.sourceImages.get(2).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 4:
-                trg5.setImageResource(sourceImages.get(3).getObject());
-                src4.setImageResource(R.drawable.empty_box);
-                correctOrder.set(4, sourceImages.get(3).getID());
-                System.out.println(correctOrder);
+                ctrl.trg5.setImageResource(ctrl.sourceImages.get(3).getObject());
+                ctrl.src4.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(4, ctrl.sourceImages.get(3).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
             case 5:
-                trg5.setImageResource(sourceImages.get(4).getObject());
-                src5.setImageResource(R.drawable.empty_box);
-                correctOrder.set(4, sourceImages.get(4).getID());
-                System.out.println(correctOrder);
+                ctrl.trg5.setImageResource(ctrl.sourceImages.get(4).getObject());
+                ctrl.src5.setImageResource(R.drawable.empty_box);
+                ctrl.correctOrder.set(4, ctrl.sourceImages.get(4).getID());
+                System.out.println(ctrl.correctOrder);
                 break;
         }
     }
 
     public void onClickCheck(View view) {
-        System.out.println(correctOrder);
-        if (correctOrder.get(0) != 1) { src1.setImageResource(R.drawable.jap_a_red); }
-        if (correctOrder.get(0) == 1) { src1.setImageResource(R.drawable.jap_a_green); }
-        if (correctOrder.get(1) != 2) { src2.setImageResource(R.drawable.jap_i_red); }
-        if (correctOrder.get(1) == 2) { src2.setImageResource(R.drawable.jap_i_green); }
-        if (correctOrder.get(2) != 3) { src3.setImageResource(R.drawable.jap_u_red); }
-        if (correctOrder.get(2) == 3) { src3.setImageResource(R.drawable.jap_u_green); }
-        if (correctOrder.get(3) != 4) { src4.setImageResource(R.drawable.jap_e_red); }
-        if (correctOrder.get(3) == 4) { src4.setImageResource(R.drawable.jap_e_green); }
-        if (correctOrder.get(4) != 5) { src5.setImageResource(R.drawable.jap_o_red); }
-        if (correctOrder.get(4) == 5) { src5.setImageResource(R.drawable.jap_o_green); }
+
+        System.out.println(ctrl.correctOrder);
+        if (ctrl.correctOrder.get(0) != 1) { ctrl.src1.setImageResource(R.drawable.jap_a_red); }
+        if (ctrl.correctOrder.get(0) == 1) { ctrl.src1.setImageResource(R.drawable.jap_a_green); }
+        if (ctrl.correctOrder.get(1) != 2) { ctrl.src2.setImageResource(R.drawable.jap_i_green); }
+        if (ctrl.correctOrder.get(1) == 2) { ctrl.src2.setImageResource(R.drawable.jap_i_red); }
+        if (ctrl.correctOrder.get(2) != 3) { ctrl.src3.setImageResource(R.drawable.jap_u_red); }
+        if (ctrl.correctOrder.get(2) == 3) { ctrl.src3.setImageResource(R.drawable.jap_u_green); }
+        if (ctrl.correctOrder.get(3) != 4) { ctrl.src4.setImageResource(R.drawable.jap_e_red); }
+        if (ctrl.correctOrder.get(3) == 4) { ctrl.src4.setImageResource(R.drawable.jap_e_green); }
+        if (ctrl.correctOrder.get(4) != 5) { ctrl.src5.setImageResource(R.drawable.jap_o_red); }
+        if (ctrl.correctOrder.get(4) == 5) { ctrl.src5.setImageResource(R.drawable.jap_o_green); }
+    }
+
+    public void imageViewLinkToResource(){
+
+        ctrl.src1 = findViewById(R.id.src1);
+        ctrl.src2 = findViewById(R.id.src2);
+        ctrl.src3 = findViewById(R.id.src3);
+        ctrl.src4 = findViewById(R.id.src4);
+        ctrl.src5 = findViewById(R.id.src5);
+        ctrl.trg1 = findViewById(R.id.trg1);
+        ctrl.trg2 = findViewById(R.id.trg2);
+        ctrl.trg3 = findViewById(R.id.trg3);
+        ctrl.trg4 = findViewById(R.id.trg4);
+        ctrl.trg5 = findViewById(R.id.trg5);
+
+    }
+
+    public void japCharConnection(){
+
+        ctrl.char1 = new ImageMap(1, R.drawable.jap_a);
+        ctrl.char2 = new ImageMap(2, R.drawable.jap_i);
+        ctrl.char3 = new ImageMap(3, R.drawable.jap_u);
+        ctrl.char4 = new ImageMap(4, R.drawable.jap_e);
+        ctrl.char5 = new ImageMap(5, R.drawable.jap_o);
+
+    }
+
+    public void addCharToArray(){
+
+        ctrl.sourceImages.add(ctrl.char1);
+        ctrl.sourceImages.add(ctrl.char2);
+        ctrl.sourceImages.add(ctrl.char3);
+        ctrl.sourceImages.add(ctrl.char4);
+        ctrl.sourceImages.add(ctrl.char5);
+
+        Collections.shuffle(ctrl.sourceImages);
+
+    }
+
+    public void initArray(){
+
+        ctrl.correctOrder.add(0);
+        ctrl.correctOrder.add(0);
+        ctrl.correctOrder.add(0);
+        ctrl.correctOrder.add(0);
+        ctrl.correctOrder.add(0);
+
+    }
+
+    public void displayShuffledItems(){
+
+        ctrl.src1.setImageResource(ctrl.sourceImages.get(0).getObject());
+        ctrl.src2.setImageResource(ctrl.sourceImages.get(1).getObject());
+        ctrl.src3.setImageResource(ctrl.sourceImages.get(2).getObject());
+        ctrl.src4.setImageResource(ctrl.sourceImages.get(3).getObject());
+        ctrl.src5.setImageResource(ctrl.sourceImages.get(4).getObject());
+
     }
 }

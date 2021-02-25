@@ -1,0 +1,9 @@
+
+
+this code would exist under a button click:
+
+
+Intent myIntent = new Intent(MainActivity.this, NextActivity.class);
+MainActivity.this.startActivity(myIntent);
+
+

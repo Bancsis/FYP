@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".NextActivity">
+    <ImageView
+            android:layout_width="140dp"
+            android:layout_height="70dp" app:srcCompat="@drawable/jap_a" android:id="@+id/src1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.199"
+            app:layout_constraintVertical_bias="0.261" tools:srcCompat="@drawable/jap_a"
+            android:contentDescription="@string/jap_a" android:onClick="onClickSRC1"/>
+    <ImageView
+            android:layout_width="140dp"
+            android:layout_height="70dp" app:srcCompat="@drawable/jap_i" android:id="@+id/src2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.199"
+            app:layout_constraintVertical_bias="0.381" tools:srcCompat="@drawable/jap_i"
+            android:contentDescription="@string/jap_i" android:onClick="onClickSRC2"/>
+    <ImageView
+            android:layout_width="140dp"
+            android:layout_height="70dp" app:srcCompat="@drawable/jap_u" android:id="@+id/src3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.199"
+            app:layout_constraintVertical_bias="0.502" tools:srcCompat="@drawable/jap_u"
+            android:contentDescription="@string/jap_u" android:onClick="onClickSRC3"/>
+    <ImageView
+            android:layout_width="140dp"
+            android:layout_height="70dp" app:srcCompat="@drawable/jap_e" android:id="@+id/src4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.199"
+            app:layout_constraintVertical_bias="0.624" tools:srcCompat="@drawable/jap_e"
+            android:contentDescription="@string/jap_e" android:onClick="onClickSRC4"/>
+    <ImageView
+            android:layout_width="140dp"
+            android:layout_height="70dp" app:srcCompat="@drawable/jap_o" android:id="@+id/src5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.199"
+            app:layout_constraintVertical_bias="0.745" tools:srcCompat="@drawable/jap_o"
+            android:contentDescription="@string/jap_o" android:onClick="onClickSRC5"/>
+
+    /*TARGETS*/
+
+    <ImageView
+            android:layout_width="140dp"
+            android:layout_height="70dp" tools:srcCompat="@drawable/empty_box" android:id="@+id/trg1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.261" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.789" android:visibility="visible" tools:visibility="visible"
+            android:background="#00000000" app:srcCompat="@drawable/empty_box"
+            android:contentDescription="@string/empty_box" android:onClick="onClickTRG1"/>
+    <ImageView
+            android:layout_width="140dp"
+            android:layout_height="70dp" tools:srcCompat="@drawable/empty_box" android:id="@+id/trg2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.381" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.789" android:visibility="visible" tools:visibility="visible"
+            android:background="#00000000" app:srcCompat="@drawable/empty_box"
+            android:contentDescription="@string/empty_box" android:onClick="onClickTRG2"/>
+    <ImageView
+            android:layout_width="140dp"
+            android:layout_height="70dp" tools:srcCompat="@drawable/empty_box" android:id="@+id/trg3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.502" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.789" android:visibility="visible" tools:visibility="visible"
+            android:background="#00000000" app:srcCompat="@drawable/empty_box"
+            android:contentDescription="@string/empty_box" android:onClick="onClickTRG3"/>
+    <ImageView
+            android:layout_width="140dp"
+            android:layout_height="70dp" tools:srcCompat="@drawable/empty_box" android:id="@+id/trg4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.624" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.789" android:visibility="visible" tools:visibility="visible"
+            android:background="#00000000" app:srcCompat="@drawable/empty_box"
+            android:contentDescription="@string/empty_box" android:onClick="onClickTRG4"/>
+    <ImageView
+            android:layout_width="140dp"
+            android:layout_height="70dp" tools:srcCompat="@drawable/empty_box" android:id="@+id/trg5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.745" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.789" android:visibility="visible" tools:visibility="visible"
+            android:background="#00000000" app:srcCompat="@drawable/empty_box"
+            android:contentDescription="@string/empty_box" android:onClick="onClickTRG5"/>
+
+    <ImageView
+            android:layout_width="213dp"
+            android:layout_height="82dp" tools:srcCompat="@drawable/check_button" android:id="@+id/check_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.929" app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" tools:visibility="visible"
+            android:background="#00000000" app:srcCompat="@drawable/check_button"
+            android:contentDescription="@string/check_button" android:onClick="onClickCheck"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
