@@ -8,4 +8,6 @@
     <string name="empty_box">Empty Box</string>
     <string name="check_button">Check Box</string>
     <string name="try_again_button">Try Again</string>
+    <string name="back_arrow_button">Back Arrow</string>
+    <string name="profile_image_button">Profile Image</string>
 </resources>
