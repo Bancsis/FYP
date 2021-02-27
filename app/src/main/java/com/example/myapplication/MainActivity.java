@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.app.ActionBar;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,13 +10,11 @@ import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
 
-
     public ImageViewController ctrl;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         ctrl = new ImageViewController();
@@ -214,8 +214,8 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(ctrl.correctOrder);
         if (ctrl.correctOrder.get(0) != 1) { ctrl.src1.setImageResource(R.drawable.jap_a_red); }
         if (ctrl.correctOrder.get(0) == 1) { ctrl.src1.setImageResource(R.drawable.jap_a_green); }
-        if (ctrl.correctOrder.get(1) != 2) { ctrl.src2.setImageResource(R.drawable.jap_i_green); }
-        if (ctrl.correctOrder.get(1) == 2) { ctrl.src2.setImageResource(R.drawable.jap_i_red); }
+        if (ctrl.correctOrder.get(1) == 2) { ctrl.src2.setImageResource(R.drawable.jap_i_green); }
+        if (ctrl.correctOrder.get(1) != 2) { ctrl.src2.setImageResource(R.drawable.jap_i_red); }
         if (ctrl.correctOrder.get(2) != 3) { ctrl.src3.setImageResource(R.drawable.jap_u_red); }
         if (ctrl.correctOrder.get(2) == 3) { ctrl.src3.setImageResource(R.drawable.jap_u_green); }
         if (ctrl.correctOrder.get(3) != 4) { ctrl.src4.setImageResource(R.drawable.jap_e_red); }
