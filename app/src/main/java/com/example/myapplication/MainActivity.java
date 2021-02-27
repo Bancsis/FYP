@@ -224,6 +224,19 @@ public class MainActivity extends AppCompatActivity {
         if (ctrl.correctOrder.get(4) == 5) { ctrl.src5.setImageResource(R.drawable.jap_o_green); }
     }
 
+    public void onClickTryAgain(View view) {
+
+        Collections.shuffle(ctrl.sourceImages);
+
+        displayShuffledItems();
+        ctrl.trg1.setImageResource(R.drawable.empty_box);
+        ctrl.trg2.setImageResource(R.drawable.empty_box);
+        ctrl.trg3.setImageResource(R.drawable.empty_box);
+        ctrl.trg4.setImageResource(R.drawable.empty_box);
+        ctrl.trg5.setImageResource(R.drawable.empty_box);
+
+    }
+
     public void imageViewLinkToResource(){
 
         ctrl.src1 = findViewById(R.id.src1);
