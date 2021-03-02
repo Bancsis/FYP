@@ -16,12 +16,17 @@ public class NextActivity extends AppCompatActivity {
         setContentView(R.layout.activity_next);
     }
 
-    public void onClickHiraganaButton(View view) {
+    public void onClickBackButton(View view) {
         Intent myIntent = new Intent(NextActivity.this, MainActivity.class);
         NextActivity.this.startActivity(myIntent);
     }
 
-    public void onClickBackButton(View view) {
+    public void onClickVowelsButton(View view) {
+        Intent myIntent = new Intent(NextActivity.this, MainActivity.class);
+        NextActivity.this.startActivity(myIntent);
+    }
+
+    public void onClickKsButton(View view) {
         Intent myIntent = new Intent(NextActivity.this, MainActivity.class);
         NextActivity.this.startActivity(myIntent);
     }

@@ -36,7 +36,7 @@
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintVertical_bias="1.0" android:contentDescription="@string/back_arrow_button"
-            android:onClick="onClickHiraganaButton"/>
+    />
     <ImageView
             android:layout_width="412dp"
             android:layout_height="145dp" app:srcCompat="@drawable/hiragana_home" android:id="@+id/hiragana_text"
@@ -58,12 +58,12 @@
                     android:layout_height="81dp" app:srcCompat="@drawable/hiragana_vowels_button"
                     android:id="@+id/vowels_button"
                     android:contentDescription="@string/back_arrow_button"
-                    android:onClick="onClickHiraganaButton"/>
+                    android:onClick="onClickVowelsButton"/>
             <ImageView
                     android:layout_width="338dp"
                     android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ks_button"
                     android:id="@+id/ks_button"
-                    android:contentDescription="@string/back_arrow_button"/>
+                    android:contentDescription="@string/back_arrow_button" android:onClick="onClickKsButton"/>
             <ImageView
                     android:layout_width="338dp"
                     android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ss_button"
