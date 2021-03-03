@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.*;
@@ -238,7 +237,9 @@ public class MainActivity extends AppCompatActivity {
         MainActivity.this.startActivity(myIntent);
     }
 
-        public void imageViewLinkToResource(){
+
+
+    public void imageViewLinkToResource(){
         ctrl.src1 = findViewById(R.id.src1);
         ctrl.src2 = findViewById(R.id.src2);
         ctrl.src3 = findViewById(R.id.src3);

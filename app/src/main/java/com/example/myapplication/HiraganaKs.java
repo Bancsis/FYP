@@ -1,8 +1,6 @@
 package com.example.myapplication;
 
-import android.content.Intent;
 import android.view.View;
-import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.*;
@@ -20,15 +18,15 @@ public class HiraganaKs extends AppCompatActivity {
 
         setContentView(R.layout.activity_hiragana_ks);
 
-//        imageViewLinkToResource();
-//
-//        japCharConnection();
-//
-//        addCharToArray();
-//
-//        initArray();
-//
-//        displayShuffledItems();
+        imageViewLinkToResource();
+
+        japCharConnection();
+
+        addCharToArray();
+
+        initArray();
+
+        displayShuffledItems();
     }
 
     public void onClickSRC1(View view) {ctrl.srcID = 1;}
@@ -225,7 +223,7 @@ public class HiraganaKs extends AppCompatActivity {
 
     public void onClickTryAgain(View view) {
         Collections.shuffle(ctrl.sourceImages);
-//        displayShuffledItems();
+        displayShuffledItems();
         ctrl.trg1.setImageResource(R.drawable.empty_box);
         ctrl.trg2.setImageResource(R.drawable.empty_box);
         ctrl.trg3.setImageResource(R.drawable.empty_box);

@@ -27,7 +27,7 @@ public class NextActivity extends AppCompatActivity {
     }
 
     public void onClickKsButton(View view) {
-        Intent myIntent = new Intent(NextActivity.this, MainActivity.class);
+        Intent myIntent = new Intent(NextActivity.this, HiraganaKs.class);
         NextActivity.this.startActivity(myIntent);
     }
 }
