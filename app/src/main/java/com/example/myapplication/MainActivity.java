@@ -9,6 +9,7 @@ import java.util.*;
 public class MainActivity extends AppCompatActivity {
 
     public ImageViewController ctrl;
+    private static MainActivity instance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
         displayShuffledItems();
     }
+
+//    public static MainActivity getInstance() {
+//        return instance;
+//    }
 
     public void onClickSRC1(View view) {ctrl.srcID = 1;}
     public void onClickSRC2(View view) {ctrl.srcID = 2;}

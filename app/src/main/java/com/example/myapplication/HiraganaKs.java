@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.view.View;
+import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.*;
@@ -18,6 +19,7 @@ public class HiraganaKs extends AppCompatActivity {
 
         setContentView(R.layout.activity_hiragana_ks);
 
+//        MainActivity.getInstance().imageViewLinkToResource();
         imageViewLinkToResource();
 
         japCharConnection();
@@ -207,7 +209,6 @@ public class HiraganaKs extends AppCompatActivity {
     }
 
     public void onClickCheck(View view) {
-
         System.out.println(ctrl.correctOrder);
         if (ctrl.correctOrder.get(0) != 1) { ctrl.src1.setImageResource(R.drawable.jap_a_red); }
         if (ctrl.correctOrder.get(0) == 1) { ctrl.src1.setImageResource(R.drawable.jap_a_green); }
@@ -232,7 +233,53 @@ public class HiraganaKs extends AppCompatActivity {
     }
 
     public void onClickBackArrow(View view) {
-//        Intent myIntent = new Intent(MainActivity.this, NextActivity.class);
-//        MainActivity.this.startActivity(myIntent);
+        Intent myIntent = new Intent(HiraganaKs.this, NextActivity.class);
+        HiraganaKs.this.startActivity(myIntent);
+    }
+
+    public void imageViewLinkToResource(){
+        ctrl.src1 = findViewById(R.id.src1);
+        ctrl.src2 = findViewById(R.id.src2);
+        ctrl.src3 = findViewById(R.id.src3);
+        ctrl.src4 = findViewById(R.id.src4);
+        ctrl.src5 = findViewById(R.id.src5);
+        ctrl.trg1 = findViewById(R.id.trg1);
+        ctrl.trg2 = findViewById(R.id.trg2);
+        ctrl.trg3 = findViewById(R.id.trg3);
+        ctrl.trg4 = findViewById(R.id.trg4);
+        ctrl.trg5 = findViewById(R.id.trg5);
+    }
+
+    public void japCharConnection(){
+        ctrl.char1 = new ImageMap(1, R.drawable.hiragana_ka);
+        ctrl.char2 = new ImageMap(2, R.drawable.hiragana_ki);
+        ctrl.char3 = new ImageMap(3, R.drawable.hiragana_ku);
+        ctrl.char4 = new ImageMap(4, R.drawable.hiragana_ke);
+        ctrl.char5 = new ImageMap(5, R.drawable.hiragana_ko);
+    }
+
+    public void addCharToArray(){
+        ctrl.sourceImages.add(ctrl.char1);
+        ctrl.sourceImages.add(ctrl.char2);
+        ctrl.sourceImages.add(ctrl.char3);
+        ctrl.sourceImages.add(ctrl.char4);
+        ctrl.sourceImages.add(ctrl.char5);
+        Collections.shuffle(ctrl.sourceImages);
+    }
+
+    public void initArray(){
+        ctrl.correctOrder.add(0);
+        ctrl.correctOrder.add(0);
+        ctrl.correctOrder.add(0);
+        ctrl.correctOrder.add(0);
+        ctrl.correctOrder.add(0);
+    }
+
+    public void displayShuffledItems(){
+        ctrl.src1.setImageResource(ctrl.sourceImages.get(0).getObject());
+        ctrl.src2.setImageResource(ctrl.sourceImages.get(1).getObject());
+        ctrl.src3.setImageResource(ctrl.sourceImages.get(2).getObject());
+        ctrl.src4.setImageResource(ctrl.sourceImages.get(3).getObject());
+        ctrl.src5.setImageResource(ctrl.sourceImages.get(4).getObject());
     }
 }

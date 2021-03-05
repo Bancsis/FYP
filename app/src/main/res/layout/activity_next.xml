@@ -69,6 +69,41 @@
                     android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ss_button"
                     android:id="@+id/ss_button"
                     android:contentDescription="@string/back_arrow_button"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ts_button"
+                    android:id="@+id/ts_button"
+                    android:contentDescription="@string/back_arrow_button"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ns_button"
+                    android:id="@+id/ns_button"
+                    android:contentDescription="@string/back_arrow_button"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_hs_button"
+                    android:id="@+id/hs_button"
+                    android:contentDescription="@string/back_arrow_button"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ms_button"
+                    android:id="@+id/ms_button"
+                    android:contentDescription="@string/back_arrow_button"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ys_button"
+                    android:id="@+id/ys_button"
+                    android:contentDescription="@string/back_arrow_button"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_rs_button"
+                    android:id="@+id/rs_button"
+                    android:contentDescription="@string/back_arrow_button"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ws_button"
+                    android:id="@+id/ws_button"
+                    android:contentDescription="@string/back_arrow_button"/>
         </LinearLayout>
     </ScrollView>
 
