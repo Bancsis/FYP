@@ -9,6 +9,7 @@ import java.util.*;
 public class HiraganaKs extends AppCompatActivity {
 
     public ImageViewController ctrl;
+    MainActivity ma = new MainActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,18 +18,17 @@ public class HiraganaKs extends AppCompatActivity {
 
         ctrl = new ImageViewController();
 
-        setContentView(R.layout.activity_hiragana_ks);
+        setContentView(R.layout.activity_main);
 
-//        MainActivity.getInstance().imageViewLinkToResource();
-        imageViewLinkToResource();
-
-        japCharConnection();
-
-        addCharToArray();
-
-        initArray();
-
-        displayShuffledItems();
+//        ma.imageViewLinkToResource();
+//
+//        ma.japCharConnection();
+//
+//        ma.addCharToArray();
+//
+//        ma.initArray();
+//
+//        ma.displayShuffledItems();
     }
 
     public void onClickSRC1(View view) {ctrl.srcID = 1;}
@@ -224,7 +224,7 @@ public class HiraganaKs extends AppCompatActivity {
 
     public void onClickTryAgain(View view) {
         Collections.shuffle(ctrl.sourceImages);
-        displayShuffledItems();
+//        ma.displayShuffledItems();
         ctrl.trg1.setImageResource(R.drawable.empty_box);
         ctrl.trg2.setImageResource(R.drawable.empty_box);
         ctrl.trg3.setImageResource(R.drawable.empty_box);
@@ -237,49 +237,49 @@ public class HiraganaKs extends AppCompatActivity {
         HiraganaKs.this.startActivity(myIntent);
     }
 
-    public void imageViewLinkToResource(){
-        ctrl.src1 = findViewById(R.id.src1);
-        ctrl.src2 = findViewById(R.id.src2);
-        ctrl.src3 = findViewById(R.id.src3);
-        ctrl.src4 = findViewById(R.id.src4);
-        ctrl.src5 = findViewById(R.id.src5);
-        ctrl.trg1 = findViewById(R.id.trg1);
-        ctrl.trg2 = findViewById(R.id.trg2);
-        ctrl.trg3 = findViewById(R.id.trg3);
-        ctrl.trg4 = findViewById(R.id.trg4);
-        ctrl.trg5 = findViewById(R.id.trg5);
-    }
-
-    public void japCharConnection(){
-        ctrl.char1 = new ImageMap(1, R.drawable.hiragana_ka);
-        ctrl.char2 = new ImageMap(2, R.drawable.hiragana_ki);
-        ctrl.char3 = new ImageMap(3, R.drawable.hiragana_ku);
-        ctrl.char4 = new ImageMap(4, R.drawable.hiragana_ke);
-        ctrl.char5 = new ImageMap(5, R.drawable.hiragana_ko);
-    }
-
-    public void addCharToArray(){
-        ctrl.sourceImages.add(ctrl.char1);
-        ctrl.sourceImages.add(ctrl.char2);
-        ctrl.sourceImages.add(ctrl.char3);
-        ctrl.sourceImages.add(ctrl.char4);
-        ctrl.sourceImages.add(ctrl.char5);
-        Collections.shuffle(ctrl.sourceImages);
-    }
-
-    public void initArray(){
-        ctrl.correctOrder.add(0);
-        ctrl.correctOrder.add(0);
-        ctrl.correctOrder.add(0);
-        ctrl.correctOrder.add(0);
-        ctrl.correctOrder.add(0);
-    }
-
-    public void displayShuffledItems(){
-        ctrl.src1.setImageResource(ctrl.sourceImages.get(0).getObject());
-        ctrl.src2.setImageResource(ctrl.sourceImages.get(1).getObject());
-        ctrl.src3.setImageResource(ctrl.sourceImages.get(2).getObject());
-        ctrl.src4.setImageResource(ctrl.sourceImages.get(3).getObject());
-        ctrl.src5.setImageResource(ctrl.sourceImages.get(4).getObject());
-    }
+//    public void imageViewLinkToResource(){
+//        ctrl.src1 = findViewById(R.id.src1);
+//        ctrl.src2 = findViewById(R.id.src2);
+//        ctrl.src3 = findViewById(R.id.src3);
+//        ctrl.src4 = findViewById(R.id.src4);
+//        ctrl.src5 = findViewById(R.id.src5);
+//        ctrl.trg1 = findViewById(R.id.trg1);
+//        ctrl.trg2 = findViewById(R.id.trg2);
+//        ctrl.trg3 = findViewById(R.id.trg3);
+//        ctrl.trg4 = findViewById(R.id.trg4);
+//        ctrl.trg5 = findViewById(R.id.trg5);
+//    }
+//
+//    public void japCharConnection(){
+//        ctrl.char1 = new ImageMap(1, R.drawable.hiragana_ka);
+//        ctrl.char2 = new ImageMap(2, R.drawable.hiragana_ki);
+//        ctrl.char3 = new ImageMap(3, R.drawable.hiragana_ku);
+//        ctrl.char4 = new ImageMap(4, R.drawable.hiragana_ke);
+//        ctrl.char5 = new ImageMap(5, R.drawable.hiragana_ko);
+//    }
+//
+//    public void addCharToArray(){
+//        ctrl.sourceImages.add(ctrl.char1);
+//        ctrl.sourceImages.add(ctrl.char2);
+//        ctrl.sourceImages.add(ctrl.char3);
+//        ctrl.sourceImages.add(ctrl.char4);
+//        ctrl.sourceImages.add(ctrl.char5);
+//        Collections.shuffle(ctrl.sourceImages);
+//    }
+//
+//    public void initArray(){
+//        ctrl.correctOrder.add(0);
+//        ctrl.correctOrder.add(0);
+//        ctrl.correctOrder.add(0);
+//        ctrl.correctOrder.add(0);
+//        ctrl.correctOrder.add(0);
+//    }
+//
+//    public void displayShuffledItems(){
+//        ctrl.src1.setImageResource(ctrl.sourceImages.get(0).getObject());
+//        ctrl.src2.setImageResource(ctrl.sourceImages.get(1).getObject());
+//        ctrl.src3.setImageResource(ctrl.sourceImages.get(2).getObject());
+//        ctrl.src4.setImageResource(ctrl.sourceImages.get(3).getObject());
+//        ctrl.src5.setImageResource(ctrl.sourceImages.get(4).getObject());
+//    }
 }

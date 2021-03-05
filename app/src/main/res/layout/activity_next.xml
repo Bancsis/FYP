@@ -45,63 +45,69 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_bias="0.152" android:contentDescription="@string/hiragana_vowels"
             app:layout_constraintHorizontal_bias="0.666"/>
+
+    /*ScrollView*/
+
     <ScrollView
-            android:layout_width="342dp"
-            android:layout_height="359dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="@+id/navigation_bar"
-            app:layout_constraintVertical_bias="0.66">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:orientation="vertical">
+            android:layout_width="336dp"
+            android:layout_height="373dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintTop_toBottomOf="@+id/hiragana_text"
+            app:layout_constraintBottom_toTopOf="@+id/navigation_bar" android:clipChildren="true"
+            android:clickable="false">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:orientation="vertical" android:fillViewport="true">
             <ImageView
-                    android:layout_width="338dp"
-                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_vowels_button"
+                    android:layout_width="330dp"
+                    android:layout_height="80dp" app:srcCompat="@drawable/hiragana_vowels_button"
                     android:id="@+id/vowels_button"
                     android:contentDescription="@string/back_arrow_button"
-                    android:onClick="onClickVowelsButton"/>
+                    android:onClick="onClickVowelsButton" android:cropToPadding="false"/>
             <ImageView
-                    android:layout_width="338dp"
-                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ks_button"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp" app:srcCompat="@drawable/hiragana_ks_button"
                     android:id="@+id/ks_button"
                     android:contentDescription="@string/back_arrow_button" android:onClick="onClickKsButton"/>
             <ImageView
-                    android:layout_width="338dp"
-                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ss_button"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp" app:srcCompat="@drawable/hiragana_ss_button"
                     android:id="@+id/ss_button"
                     android:contentDescription="@string/back_arrow_button"/>
             <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ts_button"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp" app:srcCompat="@drawable/hiragana_ts_button"
                     android:id="@+id/ts_button"
                     android:contentDescription="@string/back_arrow_button"/>
             <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ns_button"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp" app:srcCompat="@drawable/hiragana_ns_button"
                     android:id="@+id/ns_button"
                     android:contentDescription="@string/back_arrow_button"/>
             <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_hs_button"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp" app:srcCompat="@drawable/hiragana_hs_button"
                     android:id="@+id/hs_button"
                     android:contentDescription="@string/back_arrow_button"/>
             <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ms_button"
+                    android:layout_width="255dp"
+                    android:layout_height="80dp" app:srcCompat="@drawable/hiragana_ms_button"
                     android:id="@+id/ms_button"
                     android:contentDescription="@string/back_arrow_button"/>
             <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ys_button"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp" app:srcCompat="@drawable/hiragana_ys_button"
                     android:id="@+id/ys_button"
                     android:contentDescription="@string/back_arrow_button"/>
             <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_rs_button"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp" app:srcCompat="@drawable/hiragana_rs_button"
                     android:id="@+id/rs_button"
                     android:contentDescription="@string/back_arrow_button"/>
             <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="81dp" app:srcCompat="@drawable/hiragana_ws_button"
+                    android:layout_width="260dp"
+                    android:layout_height="80dp" app:srcCompat="@drawable/hiragana_ws_button"
                     android:id="@+id/ws_button"
                     android:contentDescription="@string/back_arrow_button"/>
         </LinearLayout>
