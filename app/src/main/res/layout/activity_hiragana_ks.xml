@@ -8,6 +8,27 @@
         tools:context=".HiraganaKs">
 
     <ImageView
+            android:layout_width="200dp"
+            android:layout_height="60dp" tools:srcCompat="@drawable/try_again_button"
+            android:id="@+id/try_again_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.943" app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" tools:visibility="visible"
+            android:background="#00000000" app:srcCompat="@drawable/try_again_button"
+            android:contentDescription="@string/try_again_button" android:onClick="onClickTryAgain"
+            app:layout_constraintHorizontal_bias="0.497"/>
+    <ImageView
+            android:layout_width="200dp"
+            android:layout_height="60dp" tools:srcCompat="@drawable/check_button" android:id="@+id/check_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.843" app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" tools:visibility="visible"
+            android:background="#00000000" app:srcCompat="@drawable/check_button"
+            android:contentDescription="@string/check_button" android:onClick="onClickCheck"
+            app:layout_constraintHorizontal_bias="0.497"/>
+    <ImageView
             android:layout_width="110dp"
             android:layout_height="65dp" app:srcCompat="@drawable/hiragana_ka" android:id="@+id/src1"
             app:layout_constraintTop_toTopOf="parent"
@@ -116,29 +137,9 @@
             android:onClick="onClickBackArrow"/>
     <ImageView
             android:layout_width="277dp"
-            android:layout_height="75dp" app:srcCompat="@drawable/hiragana_ks" android:id="@+id/hiragana_text"
+            android:layout_height="75dp" app:srcCompat="@drawable/hiragana_ks_text" android:id="@+id/hiragana_text"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_bias="0.147" android:contentDescription="@string/hiragana_vowels"/>
-    <ImageView
-            android:layout_width="213dp"
-            android:layout_height="62dp" tools:srcCompat="@drawable/try_again_button"
-            android:id="@+id/try_again_button"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0.852" app:layout_constraintStart_toStartOf="parent"
-            android:visibility="visible" tools:visibility="visible"
-            android:background="#00000000" app:srcCompat="@drawable/try_again_button"
-            android:contentDescription="@string/try_again_button" android:onClick="onClickTryAgain"/>
-    <ImageView
-            android:layout_width="200dp"
-            android:layout_height="60dp" tools:srcCompat="@drawable/check_button" android:id="@+id/check_button"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0.956" app:layout_constraintStart_toStartOf="parent"
-            android:visibility="visible" tools:visibility="visible"
-            android:background="#00000000" app:srcCompat="@drawable/check_button"
-            android:contentDescription="@string/check_button" android:onClick="onClickCheck"
-            app:layout_constraintHorizontal_bias="0.497"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

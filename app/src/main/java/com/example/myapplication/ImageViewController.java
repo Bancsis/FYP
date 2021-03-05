@@ -25,5 +25,4 @@ public class ImageViewController {
     public int srcID;
     public ArrayList<ImageMap> sourceImages = new ArrayList<>();
     public ArrayList<Integer> correctOrder = new ArrayList<>();
-
 }

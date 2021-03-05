@@ -1,7 +1,5 @@
 package com.example.myapplication;
 
-import android.widget.ImageView;
-
 public class ImageMap {
 
     int ID;
