@@ -13,7 +13,7 @@ public class HiraganaHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ctrl = new ImageViewController();
-        setContentView(R.layout.activity_hiragana_homet);
+        setContentView(R.layout.activity_hiragana_home);
     }
 
     public void onClickBackButton(View view) {    }
@@ -35,6 +35,11 @@ public class HiraganaHome extends AppCompatActivity {
 
     public void onClickTsButton(View view) {
         Intent myIntent = new Intent(HiraganaHome.this, HiraganaTs.class);
+        HiraganaHome.this.startActivity(myIntent);
+    }
+
+    public void onClickNsButton(View view) {
+        Intent myIntent = new Intent(HiraganaHome.this, HiraganaNs.class);
         HiraganaHome.this.startActivity(myIntent);
     }
 }

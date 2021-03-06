@@ -9,7 +9,6 @@ import java.util.*;
 public class HiraganaVowels extends AppCompatActivity {
 
     public ImageViewController ctrl;
-    private static HiraganaVowels instance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +20,9 @@ public class HiraganaVowels extends AppCompatActivity {
         setContentView(R.layout.activity_hiragana_vowels);
 
         imageViewLinkToResource();
-
         japCharConnection();
-
         addCharToArray();
-
         initArray();
-
         displayShuffledItems();
     }
 
